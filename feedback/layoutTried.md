@@ -12,7 +12,7 @@ to implement thumbs layer switcher like planck's keyboard. Moreover, I find
 backspace is difficult to reach, I map caps `lock + space` as backspace and 
 `quote` as `return` and a symbols layers, while I held down the `space` I can 
 switch to the symbols layers. I use goku simlayers to implement the layers,
-where I find it may sometimes inconvenient since I need to press the right key 
+where I find it sometimes inconvenient since I need to press the right key 
 immedently after held down `space`, if i don't then many `space` is inserted.  
 If I use layers can solve this problem, however, when I type faster, the `space` 
 itself is being eaten.
