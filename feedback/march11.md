@@ -13,4 +13,10 @@ using.
 
 4. Add number pad layer for convenient calculation, active key is the `fn` keys 
 
+Current layout:
+base layer
+![base layer](main/img/curretBaseLayer.png?raw=true)
+symbol layer:
+![symbol layer](main/img/currentSymbollayer.png?raw=true)
+
     
