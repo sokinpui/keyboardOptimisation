@@ -28,6 +28,8 @@ three rows instead of staying on home row. The feeling after trying few qwertyj
 Held down `space` to enter symbol mode, all symbols is begin put into one layer 
 make symbols live in a crowded space. And it is one of the reason it fail 
 finally.
+symbol layer at this time:
+![first symbol layer](/relative/path/to/img.jpg?raw=true)
 
 ## why I give up this layer?
 It don't work as expected, I used to think that not only cool and real efficient 
