@@ -15,8 +15,8 @@ using.
 
 Current layout:
 base layer
-![base layer](main/img/curretBaseLayer.png?raw=true)
+![base layer](/img/curretBaseLayer.png?raw=true)
 symbol layer:
-![symbol layer](main/img/currentSymbollayer.png?raw=true)
+![symbol layer](/img/currentSymbollayer.png?raw=true)
 
     

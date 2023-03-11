@@ -29,7 +29,7 @@ Held down `space` to enter symbol mode, all symbols is begin put into one layer
 make symbols live in a crowded space. And it is one of the reason it fail 
 finally.
 symbol layer at this time:
-![first symbol layer](main/img/fistSymoblLayer.png?raw=true)
+![first symbol layer](img/fistSymoblLayer.png?raw=true)
 
 ## why I give up this layer?
 It don't work as expected, I used to think that not only cool and real efficient 
@@ -42,8 +42,8 @@ In the second turn, I use dead key to implement the layers. Press `caps lock` to
 active symbols layers, press `enter` to active the number layer. Symbol layers 
 will be inactive after the symbols is inserted. Number layers stay until I press 
 the "escape" keys.
-![second symbol layer](main/img/secondSymbolLayer.png?raw=true)
-![number layer](main/img/numberLayer.png?raw=true)
+![second symbol layer](/img/secondSymbolLayer.png?raw=true)
+![number layer](/img/numberLayer.png?raw=true)
 
 ## Give up again
 Number layer is bad, It is inefficient and no necessary to press three key when 
