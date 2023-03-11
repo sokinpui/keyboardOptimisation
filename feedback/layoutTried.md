@@ -29,7 +29,7 @@ Held down `space` to enter symbol mode, all symbols is begin put into one layer
 make symbols live in a crowded space. And it is one of the reason it fail 
 finally.
 symbol layer at this time:
-![first symbol layer](img/fistSymoblLayer.png?raw=true)
+![first symbol layer](/img/fistSymoblLayer.png?raw=true)
 
 ## why I give up this layer?
 It don't work as expected, I used to think that not only cool and real efficient 
