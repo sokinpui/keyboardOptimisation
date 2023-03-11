@@ -1,0 +1,243 @@
+{
+  :profiles 
+    {:Default 
+      {:default true
+      :sim     50
+      :simlayer-threshold 1000
+      :dlay   500
+      :alone   500
+      :held    1000}}
+
+ :simlayers {
+      :edit-mode {:key :comma}  
+            } 
+             
+:layers {
+      :shift-mode {:key :spacebar}  
+         }
+
+  :main [
+          ;; edit mode is for convenient delete words by foward backword, by word and by line.
+          {:des "edit-mode"   
+                 :rules [:edit-mode
+                         ;; active key is held down comma,
+                          [:d     :delete_or_backspace]   
+                          [:f     :delete_forward]   
+                          ;;subsitute whole line 
+                          [:s     :!Cdelete_or_backspace]   
+                          ;;delete whole word
+                          [:w     :!Odelete_or_backspace]   
+                        ]
+                 }
+
+         ;; shift mode place the shift key on spacebar, when spacebar is held down, it act like holding shift.
+         {:des "shift mode"
+          :rules [:shift-mode
+                  ;; active key is held down spacebar
+                  ;; a b c d e f g h i j k l m n o p q r s t u v w x y z
+                  [:##a       :!Sa]   
+                  [:##b       :!Sb]   
+                  [:##c       :!Sc]   
+                  [:##d       :!Sd]   
+                  [:##e       :!Se]   
+                  [:##f       :!Sf]   
+                  [:##g       :!Sg]   
+                  [:##h       :!Sh]   
+                  [:##i       :!Si]   
+                  [:##j       :!Sj]   
+                  [:##k       :!Sk]   
+                  [:##l       :!Sl]   
+                  [:##m       :!Sm]   
+                  [:##n       :!Sn]   
+                  [:##o       :!So]   
+                  [:##p       :!Sp]   
+                  [:##q       :!Sq]   
+                  [:##r       :!Sr]   
+                  [:##s       :!Ss]   
+                  [:##t       :!St]   
+                  [:##u       :!Su]   
+                  [:##v       :!Sv]   
+                  [:##w       :!Sw]   
+                  [:##x       :!Sx]   
+                  [:##y       :!Sy]   
+                  [:##z       :!Sz]   
+                  ;; ! @ # $ % ^ & * ( ) 
+                  [:##0       :!S0]   
+                  [:##1       :!S1]   
+                  [:##2       :!S2]   
+                  [:##3       :!S3]   
+                  [:##4       :!S4]   
+                  [:##5       :!S5]   
+                  [:##6       :!S6]   
+                  [:##7       :!S7]   
+                  [:##8       :!S8]   
+                  [:##9       :!S9]   
+                  ;; < > ? :
+                  [:##slash       :!Sslash]   
+                  [:##comma       :!Scomma]   
+                  [:##period       :!Speriod]   
+                  [:##semicolon       :!Ssemicolon]   
+                  ;; + = 
+                  [:##left_shift       :equal_sign ]   
+                  [:##escape       :!Sequal_sign ]   
+                  ;; '
+                  [:##open_bracket :quote]
+                  ;;-
+                  [:##quote :hyphen]
+                  ;; |
+                  [:##hyphen :!Sbackslash]
+                  ;; `
+                  [:grave_accent_and_tilde :grave_accent_and_tilde]
+                  ;; shift + enter
+                  [:##return_or_enter       :!Sreturn_or_enter]   
+                  ]}
+         
+        ;;nu-layer is for convenient to input number for calculation.
+        {:des "nu-layer"
+          :rules [
+              ;; tap fn(map to non_us_backslash) to active the number layer
+              [:non_us_backslash   ["nu-layer" 1]]
+              ;; body
+              :nu-layer
+              ;; number pad on left hand side: 0 1 2 3 4 5 6 7 8 9
+              [:##n        :0 ]
+              [:##m        :1 ]
+              [:##comma        :2 ]
+              [:##period        :3 ]
+              [:##j        :4 ]
+              [:##k        :5 ]
+              [:##l        :6 ]
+              [:##u        :7 ]
+              [:##i        :8 ]
+              [:##o        :9 ]
+              ;; symbol: + = - * / ^ ,
+              [:##f        :!Sequal_sign ]
+              [:##e        :equal_sign ]
+              [:##d        :hyphen ]
+              [:##s        :!S8 ]
+              [:##a        :slash ]
+              [:##g        :!S6 ]
+              [:##c        :comma ]
+              ;;inactive key
+              [:left_command ["nu-layer" 0]]
+              [:escape [["nu-layer" 0]] ["nu-layer" 1]  ]
+              [:return_or_enter   [:return_or_enter ["nu-layer" 0]]  ["nu-layer" 1] ]
+              ;; remap the remain key to null
+              [:##q        :vk_none ]
+              [:##w        :vk_none ]
+              [:##r        :vk_none ]
+              [:##t        :vk_none ]
+              [:##y        :vk_none ]
+              [:##h        :vk_none ]
+              [:##z        :vk_none ]
+              [:##x        :vk_none ]
+              [:##v        :vk_none ]
+              [:##b        :vk_none ]
+              [:##p        :vk_none ]
+              [:##open_bracket        :vk_none ]
+              [:##0        :vk_none ]
+              [:##1        :vk_none ]
+              [:##2        :vk_none ]
+              [:##3        :vk_none ]
+              [:##4        :vk_none ]
+              [:##5        :vk_none ]
+              [:##6        :vk_none ]
+              [:##7        :vk_none ]
+              [:##8        :vk_none ]
+              [:##9        :vk_none ]
+              [:##equal_sign        :vk_none ]
+              [:##hyphen        :vk_none ]
+]}
+             
+        
+        ;;remap event
+        {:des "remap key on base layer"
+         :rules [
+            ;; vim like arrow key and shift enter, active by held down with contrl(escape) 
+            ;; shift + enter
+            [:!Treturn_or_enter :!Sreturn_or_enter]
+            ;; < v ^ >
+            [:!Th :left_arrow]
+            [:!Tj :down_arrow]
+            [:!Tk :up_arrow]
+            [:!Tl :right_arrow]
+            ;; swap ~ and `
+            [:##grave_accent_and_tilde :!Sgrave_accent_and_tilde]
+            ;; " 
+            [:##open_bracket :!Squote]
+            ;; _ -
+            [:##quote :!Shyphen]
+            ;; | \
+            [:##hyphen :backslash]
+            ;; escape and initialize all layer into null state
+            [:escape :left_control nil {:alone [:escape ["layer-1" 0] ["layer-2" 0] ["layer-3" 0]]} ]
+            ;; exit when error in compile the code
+            [:right_option [:!Tc :return_or_enter]]
+         ]} 
+
+        {:des "layer-3"
+         ;; layer 3 is two level layer, the lower layer active by tapping the key, the second layer active by held down the key
+         :rules [
+         ;; active key 
+         [:left_shift   ["layer-3-hold" 1] nil {
+              :alone [["layer-3" 1]]
+              :afterup ["layer-3-hold" 0]
+            }]
+
+         :layer-3-hold
+         ;;[ ] 
+         [:##f        :open_bracket ]
+         [:##j        :close_bracket ]
+         ;; { }
+         [:##g        :!Sopen_bracket ]
+         [:##h        :!Sclose_bracket ]
+         ;; backspace
+         [:##spacebar        :delete_or_backspace ]
+
+         ]}
+
+        ;; layer 1 put symbols not on number row to main area of the keyboard.
+        ;;{:des "layer 1 " 
+         ;;:rules [
+         ;;  ;; active key
+         ;;  [:left_shift  [ ["layer-1" 1] ["layer-2" 0] ]    ]
+         ;;  :layer-1
+         ;;  ;; | \
+         ;;  [:##k       [:!Sbackslash ["layer-1" 0]] ]   
+         ;;  [:##l       [:backslash ["layer-1" 0]] ]   
+         ;;  ;; ~ ` 
+         ;;  [:##m       [:!Sgrave_accent_and_tilde ["layer-1" 0]] ]   
+         ;;  [:##comma       [:grave_accent_and_tilde ["layer-1" 0]] ]   
+         ;;  ;; ' "
+         ;;  [:##n       [:quote ["layer-1" 0]] ]   
+         ;;  [:##j       [:!Squote ["layer-1" 0]] ]   
+         ;;  ;; = + _ - 
+         ;;  [:##o       [:equal_sign ["layer-1" 0]] ]   
+         ;;  [:##u       [:!Sequal_sign ["layer-1" 0]] ]   
+         ;;  [:##h       [:!Shyphen ["layer-1" 0]] ]   
+         ;;  [:##i       [:hyphen ["layer-1" 0]] ]   
+         ;;  ;; ~/.
+         ;;  [:##slash       [:!Sgrave_accent_and_tilde :slash :period ["layer-1" 0]] ]   
+         ;;  ;; inactive key
+         ;;  [:spacebar       [:spacebar ["layer-1" 0]] ]   
+         ;;]}     
+
+        ;;{:des "layer-2"
+        ;; ;; layer 2 is active by double tap some keys
+        ;; :rules [
+        ;;   ;; active key
+        ;;   [:  [:delete_or_backspace  ["layer-2" 1]]  ["tap-once" 1 ] ]
+        ;;   [:  [:  ["tap-once" 1]] [["layer-2" 0]]  {:delayed {:invoked ["tap-once" 0] :canceled ["tap-once" 0]}} ]
+        ;;  :double-tap
+        ;; ]}
+
+        
+
+;;----------------------Reach bottom---------------------------------
+]}
+
+
+
+
+
+
